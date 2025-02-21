@@ -1,15 +1,16 @@
-{ cell, inputs }:
-let
-  inherit (inputs) nixpkgs self;
-in
 {
+  cell,
+  inputs,
+}: let
+  inherit (inputs) nixpkgs self;
+in {
   default = final: prev: {
     tex = prev.texlive.combine {
-      inherit (prev.texlive)
+      inherit
+        (prev.texlive)
         scheme-medium
         latexmk
         latexindent
-
         hanging
         biblatex
         ;

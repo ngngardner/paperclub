@@ -1,7 +1,8 @@
-{ cell, inputs }:
-let
-  inherit (cell.lib) pkgs;
-in
 {
+  cell,
+  inputs,
+}: let
+  inherit (cell.lib) pkgs;
+in {
   annotatedBibliography = pkgs.annotatedBibliography;
 }

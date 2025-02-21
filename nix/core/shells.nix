@@ -1,12 +1,12 @@
-{ cell, inputs }:
-let
-  inherit (cell.lib) pkgs;
-in
 {
+  cell,
+  inputs,
+}: let
+  inherit (cell.lib) pkgs;
+in {
   default = inputs.std.lib.dev.mkShell {
     name = "shell";
     packages = [
-      pkgs.just
       pkgs.tex
     ];
 
@@ -14,6 +14,15 @@ in
       inputs.std.std.devshellProfiles.default
     ];
 
-    commands = [ ];
+    nixago = [
+      cell.configs.conform
+      cell.configs.editorconfig
+      cell.configs.lefthook
+      cell.configs.treefmt
+      cell.configs.vscodeSettings
+      cell.configs.vscodeExtensions
+    ];
+
+    commands = [];
   };
 }

@@ -1,4 +1,5 @@
 *.log
+*.original
 
 # nix
 .bin
@@ -9,3 +10,10 @@
 .run
 result
 
+
+# nixago: ignore-linked-files
+/.conform.yaml
+/lefthook.yml
+/.vscode/extensions.json
+/.vscode/settings.json
+/treefmt.toml
