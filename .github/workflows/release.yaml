@@ -30,13 +30,13 @@ jobs:
         id: date_version
         run: |
           DATE=$(date +'%Y.%-m.%-d')
-          LAST_TAG=$(git tag --sort=-creatordate | grep "^v${DATE}" | head -n 1) # get most recent tag of the day
+          LAST_TAG=$(git tag --sort=-creatordate | grep "^v${DATE}" | head -n 1)
           if [[ -z "$LAST_TAG" ]]; then
-            BUILD_NUMBER=0 # start at 0 if no tags found
+            BUILD_NUMBER=0
           else
-            BUILD_NUMBER=$(( $(echo "$LAST_TAG" | grep -oE '[0-9]+$') + 1 )) # increment build number
+            BUILD_NUMBER=$(( $(echo "$LAST_TAG" | grep -oE '+$') + 1 ))
           fi
-          echo "::set-output name=tag::v${DATE}.${BUILD_NUMBER}"
+          echo "tag=v${DATE}.${BUILD_NUMBER}" >> $GITHUB_OUTPUT
 
       - name: Create Release
         id: create_release
