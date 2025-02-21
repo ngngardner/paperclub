@@ -20,7 +20,12 @@
     std.growOn
       {
         inherit inputs;
-        systems = [ "x86_64-linux" ];
+        systems = [
+          "x86_64-linux"
+          "aarch64-linux"
+          "x86_64-darwin"
+          "aarch64-darwin"
+        ];
         cellsFrom = ./nix;
         cellBlocks = with std.blockTypes; [
           (functions "lib")
