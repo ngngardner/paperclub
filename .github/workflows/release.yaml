@@ -21,7 +21,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@main
 
       - name: Enable Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
+        uses: DeterminateSystems/flakehub-cache-action@main
 
       - name: Build Annotated Bibliography
         run: nix build .#annotatedBibliography
@@ -41,6 +41,8 @@ jobs:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.date_version.outputs.tag }}
           release_name: Release ${{ steps.date_version.outputs.tag }}
@@ -49,6 +51,8 @@ jobs:
 
       - name: Upload Annotated Bibliography to Release
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./result/share/annotated-bibliography/main.pdf
