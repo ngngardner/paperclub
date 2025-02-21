@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hanging}
+\usepackage[style=authoryear, backend=biber]{biblatex}
+\addbibresource{main.bib}
+
+\title{Annotated Bibliography}
+\author{ML Paper Club}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Annotations}
+
+\begin{hangparas}{1em}{1}
+    \citeauthor{DBLP:journals/corr/WatterSBR15}
+    (\citeyear{DBLP:journals/corr/WatterSBR15}).
+    \textit{\citetitle{DBLP:journals/corr/WatterSBR15}}.
+    \printbibliography[heading=none, keyword=DBLP:journals/corr/WatterSBR15]
+
+    \begin{itemize}
+    \item Model-based learning for images (high dimensional input) that uses
+    latent space representation (low dimensional)
+    \item Main contributions: trains the encoder, decoder, and transition model
+    simultaneously, which allows them to set a restriction for local linearity
+    for the transition dynamics
+    \item The resulting encoder produces good representation spaces. They use KL
+    divergence to make sure the model stays in relevant space.
+    \end{itemize}
+    \end{hangparas}
+
+\end{document}
