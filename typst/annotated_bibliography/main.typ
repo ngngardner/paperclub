@@ -8,6 +8,17 @@
 }
 
 #annotate(
+  <abs-1906-08253>, list(
+    [Introduces technique where they use the dynamics-model in short runs, branching
+      frequently from runs using "real life" data. They keep separate replay buffers
+      for model-generated data and the real environment data], [It improves the sample efficiency, and avoids overfitting to data in the "real
+      data" replay buffer which may have few samples], [They were comparing usefulness of off-policy real data versus on-policy
+      model-generated data. They found that branches of 0 length were best in theory,
+      but in practice, branches of length 1 were most helpful],
+  ),
+)
+
+#annotate(
   <WatterSBR15>, list(
     [Model-based learning for images (high dimensional input) that uses latent space
       representation (low dimensional)], [Main contributions: trains the encoder, decoder, and transition model
@@ -17,16 +28,7 @@
   ),
 )
 
-#annotate(
-  <Williams2004SimpleSG>, list(
-    [Introduces technique where they use the dynamics-model in short runs, branching
-      frequently from runs using "real life" data. They keep separate replay buffers
-      for model-generated data and the real environment data], [It improves the sample efficiency, and avoids overfitting to data in the "real
-      data" replay buffer which may have few samples], [They were comparing usefulness of off-policy real data versus on-policy
-      model-generated data. They found that branches of 0 length were best in theory,
-      but in practice, branches of length 1 were most helpful],
-  ),
-)
+#annotate(<Williams2004SimpleSG>, "")
 
 #annotate(<MnihKSGAWR13>, "")
 
