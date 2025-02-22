@@ -20,14 +20,14 @@ in {
 
   treefmt = (mkNixago configs.treefmt) {
     packages = [
-      pkgs.tex-fmt
+      pkgs.typstfmt
       pkgs.bibtex-tidy
     ];
     data = {
       formatter = {
-        latex = {
-          command = "${pkgs.tex-fmt}/bin/tex-fmt";
-          includes = ["*.tex"];
+        typst = {
+          command = "${pkgs.typstfmt}/bin/typstfmt";
+          includes = ["*.typ"];
         };
         bibtex = {
           command = "${pkgs.bibtex-tidy}/bin/bibtex-tidy";
@@ -55,6 +55,7 @@ in {
         "files.exclude" = {
           "**/.bin" = true;
           "**/.cache" = true;
+          "**/.data" = true;
           "**/.direnv" = true;
           "**/.config" = true;
           "**/.local" = true;

@@ -7,7 +7,7 @@ in {
   default = inputs.std.lib.dev.mkShell {
     name = "shell";
     packages = [
-      pkgs.tex
+      pkgs.typst
     ];
 
     imports = [
