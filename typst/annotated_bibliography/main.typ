@@ -1,3 +1,7 @@
+#import "@preview/cmarker:0.1.2"
+
+#cmarker.render(read("german.md"))
+
 #let annotate(key, text) = {
   cite(key, form: "full")
 

@@ -33,6 +33,10 @@ in {
           command = "${pkgs.bibtex-tidy}/bin/bibtex-tidy";
           includes = ["*.bib"];
         };
+        md = {
+          command = "${pkgs.mdformat}/bin/mdformat";
+          includes = ["*.md"];
+        };
       };
     };
   };
