@@ -183,3 +183,12 @@ https://arxiv.org/abs/1802.06070
 	* Choose the skill that gives the most reward and then fine-tune
 	* Train a model to select the skill for the next n steps
 	* Train a model that mimics a human expert
+
+### Paper 16 - 2018 Haarnoja - Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor
+https://arxiv.org/pdf/1801.01290
+
+* Added entropy maximization term in the reward object of a stochastic actor-critic model to increase exploration
+* "Temperature" parameter changes the balance between the reward terms
+* Solved brittleness of tuning hyper-parameters by adding a new hyper-parameter
+* Outperformed other models on typical RL benchmarks
+* Faster than PPO, but maybe not better when training longer???
